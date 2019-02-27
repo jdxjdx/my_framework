@@ -165,32 +165,6 @@ function RunInEditor()
     return (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.OSXEditor) or (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WindowsEditor)
 end
 
---local sprite_path_prefix = "Sprite/"
-function GetSprite(spriteName)
-    --[[if not string.find(spriteName, sprite_path_prefix) then
-        local segmentIndex = string.find(spriteName, "/")
-        spriteName = spriteName:sub(1, segmentIndex) .. sprite_path_prefix .. spriteName:sub(segmentIndex + 1, string.len(spriteName))
-    end]]
-    return GameObjectPool.Instance:GetSprite(spriteName)
-end
-
-function GetMaterial(materialName)
-    return GameObjectPool.Instance:GetMaterial(materialName)
-end
-
-function LoadSprite(spriteName, callback)
-    --[[if not string.find(spriteName, sprite_path_prefix) then
-        local segmentIndex = string.find(spriteName, "/")
-        spriteName = spriteName:sub(1, segmentIndex) .. sprite_path_prefix .. spriteName:sub(segmentIndex + 1, string.len(spriteName))
-    end]]
-    local function onFinish()
-        if callback then
-            callback(GameObjectPool.Instance:GetSprite(spriteName))
-        end
-    end
-    GameObjectPool.Instance:AddPoolTemplateLua({spriteName}, onFinish, function() end)
-end
-
 function IsRectIntersects(rect_1, rect_2)
     return not (rect_1.rt.x < rect_2.lb.x or rect_2.rt.x < rect_1.lb.x or rect_1.rt.y < rect_2.lb.y or rect_2.rt.y < rect_1.lb.y)
 end
