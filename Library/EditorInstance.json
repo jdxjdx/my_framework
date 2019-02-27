@@ -1,4 +1,8 @@
 {
-	"process_id" : 24709,
-	"version" : "2018.1.0f2"
+  "process_id": 24709,
+  "version": "2018.1.0f2",
+  "app_path": "/Applications/Unity2018.1.0/Unity2018.1.0.app",
+  "app_contents_path": "/Applications/Unity2018.1.0/Unity2018.1.0.app/Contents",
+  "attach_allowed": "True",
+  "is_loaded_from_assets": "True"
 }
